@@ -1,0 +1,7 @@
+body {
+  background: silver;
+}
+
+.btn:active {
+  transform: scale(0.8);
+}

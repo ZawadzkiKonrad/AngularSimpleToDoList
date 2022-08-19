@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-list';
+
+  public todos: Todo[];
+
+  constructor() {
+    this.todos = [];
+  }
+
+  public addTodo(todo: Todo) {
+    this.todos.unshift(todo);
+  }
+
+  public removeTodo(todo: Todo) {
+    this.todos = this.todos.filter(item => item !== todo);
+  }
 }
